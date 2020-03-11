@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Route } from 'react-router-dom';
+import React from 'react';
+import { Switch, Route } from 'react-router-dom';
 
 import Home from './pages/Home';
 import Museums from './pages/museums/Museums';
@@ -14,12 +14,14 @@ export default function Content(props) {
   return (
     <div className="App-content">
       <Route exact path="/" component={Home} />
-      <Route path="/museums" render={Museums} />
-      <Route path="/museums/add" render={NewMuseum} />
-      <Route path="/museums/:id" render={ShowMuseum} />
-      <Route path="/pieces" render={Pieces} />
-      <Route path="/pieces/add" render={NewPiece} />
-      <Route path="/pieces/:id" render={ShowPiece} />
+      <Switch>
+        <Route path="/museums/add" component={NewMuseum} />
+        <Route path="/museums/:id" component={ShowMuseum} />
+        <Route path="/museums" component={Museums} />
+        <Route path="/pieces" component={Pieces} />
+        <Route path="/pieces/add" component={NewPiece} />
+        <Route path="/pieces/:id" component={ShowPiece} />
+      </Switch>
     </div>
   )
 }

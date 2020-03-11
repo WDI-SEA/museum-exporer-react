@@ -33,11 +33,19 @@
 }
 
 .App-content {
-  height: 90vh;
+  min-height: 90vh;
 }
 
 .half {
   width: 50%;
+}
+
+.button-link {
+  border: 2px solid black;
+  display: inline-block;
+  padding: 1em;
+  border-radius: .5em;
+  box-shadow: 0.2em 0.4em 5px 0px;
 }
 
 @keyframes App-logo-spin {
