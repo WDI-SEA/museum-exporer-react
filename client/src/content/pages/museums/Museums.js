@@ -29,7 +29,7 @@ export default function Museum(props) {
 
   return (
     <div>
-      <h1>MUSEUMS STUB</h1>
+      <h1>All Museums</h1>
       <div className="button-link"><Link to='/museums/add'>Add A Museum</Link></div>
       {museumDeets}
     </div>

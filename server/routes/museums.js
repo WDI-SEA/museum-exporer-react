@@ -9,6 +9,7 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', (req, res) => {
+  console.log(req.body);
   // Remove any keys that have no value
   Object.keys(req.body).forEach((key) => (req.body[key] == '') && delete req.body[key]);
 

@@ -20,9 +20,9 @@ export default function ShowMuseum(props) {
     }).catch(err=>console.log(err));
   }, [])
 
-  let museumDeets = !museum ? 'Loading' : (
+  let museumDeets = !museum ? <h3>'Loading'</h3> : (
     <div>
-      <h4>{museum.name}</h4>
+      <h2>{museum.name}</h2>
       <h5>{museum.city}, {museum.country}</h5>
       <img src={museum.image} />
     </div>
@@ -30,7 +30,6 @@ export default function ShowMuseum(props) {
 
   return (
     <div>
-      <h1>SHOW MUSEUM STUB</h1>
       {museumDeets}
     </div>
   )
