@@ -18,9 +18,9 @@ export default function Content(props) {
         <Route path="/museums/add" component={NewMuseum} />
         <Route path="/museums/:id" component={ShowMuseum} />
         <Route path="/museums" component={Museums} />
-        <Route path="/pieces" component={Pieces} />
         <Route path="/pieces/add" component={NewPiece} />
         <Route path="/pieces/:id" component={ShowPiece} />
+        <Route path="/pieces" component={Pieces} />
       </Switch>
     </div>
   )

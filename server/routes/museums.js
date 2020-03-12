@@ -3,13 +3,12 @@ const router = express.Router();
 const db = require('../models/index');
 
 router.get('/', (req, res) => {
-  db.Museum.find()
+  db.Museum.find().populate()
   .then(museums => res.send(museums))
   .catch(err=>res.send({ message: 'Error in getting all museums', err}));
 });
 
 router.post('/', (req, res) => {
-  console.log(req.body);
   // Remove any keys that have no value
   Object.keys(req.body).forEach((key) => (req.body[key] == '') && delete req.body[key]);
 

@@ -3,7 +3,7 @@ const router = express.Router();
 const db = require('../models/index');
 
 router.get('/', (req, res) => {
-  db.Piece.find().populate('museum')
+  db.Piece.find(req.query).populate('museum')
   .then(pieces => res.send(pieces))
   .catch(err=>res.send({ message: 'Error in getting all pieces', err}));
 });

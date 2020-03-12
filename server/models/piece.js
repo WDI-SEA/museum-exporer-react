@@ -11,8 +11,8 @@ const creatorSchema = new mongoose.Schema({
     type: String,
     default: 'http://www.placekitten.com/200/200'
   },
-  birthYear: String,
-  deathYear: String
+  birthyear: String,
+  deathyear: String
 });
 
 // TODO: Create Piece Schema name, image, creator, museum

@@ -4,33 +4,20 @@ import { useAddMuseum } from '../../../CustomHooks';
 import axios from 'axios';
 
 export default function NewMuseum(props) {
-  const sendToDb = (e) => {
-    console.log('🍕');
-    console.log(inputs);
-
-    axios({
-      method: 'post',
-      url: `${process.env.REACT_APP_SERVER_URL}/museums`,
-      data: {
-        city: "please",
-        county: "fucking",
-        name: 'Work',
-        image: 'farts'
-      },
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/x-www-form-urlencoded'
-      }
-    })
+  const sendToDb = () => {
+    axios.post(`${process.env.REACT_APP_SERVER_URL}/museums`, inputs)
     .then(response=>{
-      console.log('🍟')
-      console.log(response)
-      setNewMuseum(response.data)
+      if (response.data.message) {
+        setError(response.data.message)
+      } else {
+        setNewMuseum(response.data)
+      }
     }).catch(err=>console.log(err));
   }
 
   const {inputs, handleInputChange, handleSubmit} = useAddMuseum(sendToDb);
   const [newMuseum, setNewMuseum] = useState(null)
+  const [error, setError] = useState(null)
   
   if (newMuseum) return <Redirect to={`/museums/${newMuseum._id}`} />
 

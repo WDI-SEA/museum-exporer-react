@@ -48,6 +48,10 @@
   box-shadow: 0.2em 0.4em 5px 0px;
 }
 
+.hidden {
+  display: none;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
