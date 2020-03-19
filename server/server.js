@@ -1,11 +1,14 @@
 // Require needed node modules
 const express = require('express');
+const cors = require("cors");
 
 // Create an instance of express
 const app = express();
 
 // Middleware, etc
 app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
+app.use(cors());
 
 // Declare controllers
 app.use('/museums', require('./routes/museums'));
